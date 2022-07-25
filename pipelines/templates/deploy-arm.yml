@@ -40,16 +40,16 @@ stages:
                   $envName = '$(EnvironmentName)'
                   Write-Host "Deployment environment name variable: $envName"
 
-          - task: AzureCLI@2
-            displayName: 'Create resource group - $(ResourceGroupName)'
-            inputs:
-              azureSubscription: $(AzureSubscriptionConnectionName)
-              scriptType: ps
-              scriptLocation: inlineScript
-              inlineScript: |
-                Write-Host "Creating RG: $(ResourceGroupName)"
-                az group create -n $(ResourceGroupName) -l $(ResourceGroupLocation)
-                Write-Host "Created RG: $(ResourceGroupName)"
+#          - task: AzureCLI@2
+#            displayName: 'Create resource group - $(ResourceGroupName)'
+#            inputs:
+#              azureSubscription: $(AzureSubscriptionConnectionName)
+#              scriptType: ps
+#              scriptLocation: inlineScript
+#              inlineScript: |
+#                Write-Host "Creating RG: $(ResourceGroupName)"
+#                az group create -n $(ResourceGroupName) -l $(ResourceGroupLocation)
+#                Write-Host "Created RG: $(ResourceGroupName)"
 
           - task: AzureResourceGroupDeployment@2
             displayName: 'Deploying ARM template to $(ResourceGroupName)'
