@@ -28,7 +28,7 @@ var appNameEnvLocationSuffix  = '${applicationName}${env}'
 
 // Storage Account
 
-var storageAccountName  = '${storageAccountPrefix}${appNameEnvLocationSuffix}' 
+var storageAccountName  = '${storageAccountPrefix}${appNameEnvLocationSuffix}cloudops' 
 
 resource attachmentStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
     name: storageAccountName
